@@ -25,15 +25,11 @@ const parse = function(timestring) {
     if (matches = timestring.match(pattern_seconds)) {
         ms  = parse_ms_string(matches[2]);
         sec = matches[1] ? parseInt(matches[1], 10) : 0;
-    }
-
-    if (matches = timestring.match(pattern_minutes)) {
+    } else if (matches = timestring.match(pattern_minutes)) {
         ms  = parse_ms_string(matches[3]);
         sec = matches[2] ? parseInt(matches[2], 10) : 0;
         min = matches[1] ? parseInt(matches[1], 10) : 0;
-    }
-
-    if (matches = timestring.match(pattern_hours)) {
+    } else if (matches = timestring.match(pattern_hours)) {
         ms  = parse_ms_string(matches[4]);
         sec = matches[3] ? parseInt(matches[3], 10) : 0;
         min = matches[2] ? parseInt(matches[2], 10) : 0;
@@ -41,7 +37,7 @@ const parse = function(timestring) {
     }
 
     if (ms || sec || min || hr) {
-        return (hr * 3600 + (min * 60 + sec)) * 1000 + ms;
+        return ((hr * 60 + min) * 60 + sec) * 1000 + ms;
     }
 
     return null;
