@@ -33,5 +33,9 @@ describe('NormalPlayTime', function() {
       assert.equal(3723400, NormalPlayTime.parse("1:2:3.4"));
     });
 
+    it('should return 0 for 0 milliseconds', function() {
+      assert.equal(0, NormalPlayTime.parse("00:00:00.000"));
+    });
+
   });
 });

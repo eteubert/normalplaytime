@@ -34,13 +34,11 @@ const parse = function(timestring) {
         sec = matches[3] ? parseInt(matches[3], 10) : 0;
         min = matches[2] ? parseInt(matches[2], 10) : 0;
         hr  = matches[1] ? parseInt(matches[1], 10) : 0;
+    } else {
+        return null;
     }
 
-    if (ms || sec || min || hr) {
-        return ((hr * 60 + min) * 60 + sec) * 1000 + ms;
-    }
-
-    return null;
+    return ((hr * 60 + min) * 60 + sec) * 1000 + ms;
 }
 
 module.exports = {
