@@ -1,6 +1,6 @@
 {
   "name": "normalplaytime",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parser for Normal Play Time (RFC 2326)",
   "main": "index.js",
   "scripts": {
