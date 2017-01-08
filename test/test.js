@@ -1,5 +1,5 @@
 var assert = require("assert");
-var NormalPlayTime = require('../index.js');
+var NormalPlayTime = require('../src/index.js');
 
 
 describe('NormalPlayTime', function() {
