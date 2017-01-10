@@ -20,7 +20,10 @@ const parse = function(timestring) {
     const pattern_hours   = /^(\d+):(\d\d?):(\d\d?)(?:\.(\d+))?$/;
 
     var matches;
-    var ms = sec = min = hr = 0;
+    var ms  = 0;
+    var sec = 0;
+    var min = 0;
+    var hr  = 0;
 
     if (matches = timestring.match(pattern_seconds)) {
         ms  = parse_ms_string(matches[2]);
